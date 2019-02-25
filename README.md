@@ -2,6 +2,10 @@
 
 Script to automatically disable wikis on all repositories in an organisation.
 
+This was created because prior to around 2015, any repositories created in GitHub, by default, had the wiki enabled, and allowed anyone to edit the wiki, even if they didn't have push access to the repository. This opens up somewhat of an exploit opportunity, as it allows a malicious user to post malicious information (eg, links to malicious versions of the project) to the wiki, and exploit the fact that many people might see the wiki as a trusted source of information.
+
+Unfortunately, GitHub doesn't expose the anyone can edit configuration option of wikis in the GitHub API, so there's no straight forward way of auditing and updating this. However, in all the organisations I'm part of, the wiki is almost never used, so just disabling the wiki altogether achieves the same thing.
+
 ## Usage
 
 Create a GitHub application token, and set in the environment variable:
